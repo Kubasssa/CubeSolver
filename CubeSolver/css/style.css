@@ -1,0 +1,815 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --bgcColor: rgb(243, 243, 243);
+  --headerColor: rgb(93, 95, 206);
+  --textxColor: rgb(0, 0, 0);
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+header {
+  position: relative;
+  height: 60px;
+  width: 100%;
+  background-color: #226fbe;
+}
+
+header > .mainLink {
+  margin-left: 50px;
+  line-height: 60px;
+  text-decoration: none;
+  -webkit-text-decoration-color: black;
+          text-decoration-color: black;
+  font-size: 30px;
+  color: #000;
+}
+
+header > .logout {
+  position: absolute;
+  right: 110px;
+  line-height: 60px;
+  color: white;
+}
+
+header > .loginImage {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  right: 50px;
+  top: 7.5px;
+  background-image: url("profile.png");
+  background-position: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+header > form {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  min-width: 300px;
+}
+
+header > form > :nth-child(1) {
+  width: 100px;
+  height: 18px;
+}
+
+header > form > :nth-child(2) {
+  width: 120px;
+  height: 18px;
+}
+
+header > form > :nth-child(1)::-webkit-input-placeholder, header > form > :nth-child(2)::-webkit-input-placeholder {
+  color: #444444;
+}
+
+header > form > :nth-child(1):-ms-input-placeholder, header > form > :nth-child(2):-ms-input-placeholder {
+  color: #444444;
+}
+
+header > form > :nth-child(1)::-ms-input-placeholder, header > form > :nth-child(2)::-ms-input-placeholder {
+  color: #444444;
+}
+
+header > form > :nth-child(1)::placeholder, header > form > :nth-child(2)::placeholder {
+  color: #444444;
+}
+
+header > form > :nth-child(3) {
+  width: 40px;
+  border: none;
+  border-radius: 2px;
+  background-color: gold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+header > .regLink {
+  position: absolute;
+  right: 85px;
+  top: 39px;
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+}
+
+header > .regLink:hover {
+  color: gold;
+}
+
+section {
+  position: relative;
+  -ms-flex-preferred-size: 95%;
+      flex-basis: 95%;
+  background-color: #f3f3f3;
+  color: var(--textxColor);
+  -webkit-box-shadow: inset 0 10px 22px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 10px 22px rgba(0, 0, 0, 0.3);
+}
+
+section > .src {
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 30px;
+}
+
+section > .display {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: black;
+}
+
+section > .displayTimeCube {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: black;
+}
+
+section > .stats {
+  position: absolute;
+  width: 13vw;
+  height: 400px;
+  top: 15%;
+  right: 4.9%;
+  padding: 5px;
+  font-size: 20px;
+  color: black;
+  overflow: hidden;
+}
+
+.stats > .statsButton {
+  position: absolute;
+  width: 100%;
+  height: 32px;
+  top: 0%;
+  padding: 5px;
+  font-size: 20px;
+  background-color: #226fbe;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.stats > .statsButton::before {
+  content: "stats";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.stats > .statsButton:hover::before {
+  top: 150%;
+}
+
+.stats > .statsButton::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-top: 10px solid white;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.stats > .statsButton:hover {
+  background-color: #4593e3;
+}
+
+.stats > .statsButton:hover::after {
+  top: 50%;
+}
+
+.stats > .mainStats {
+  position: absolute;
+  top: -80%;
+  height: 60%;
+  width: 100%;
+  background-color: #ececec;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.stats > .mainStatsClick {
+  top: 10%;
+}
+
+.mainStats > div > span {
+  color: #226fbe;
+}
+
+.timeTable {
+  position: absolute;
+  width: 18vw;
+  height: 450px;
+  top: 15%;
+  right: 18%;
+}
+
+.timeTable > .times {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+  height: 400px;
+  top: 38px;
+  right: 0%;
+  background-color: #f3f3f3;
+  font-size: 20px;
+  overflow-y: scroll;
+}
+
+.timeTable > .times::-webkit-scrollbar {
+  width: 8px;
+}
+
+.timeTable > .times::-webkit-scrollbar-thumb {
+  background-color: gold;
+  border-radius: 3px;
+}
+
+.timeTable > .times::-webkit-scrollbar-thumb:hover {
+  background-color: #ffe44d;
+}
+
+.timeTable > form > .resetButton {
+  position: absolute;
+  width: 100%;
+  height: 32px;
+  top: 0px;
+  right: 0%;
+  background-color: #226fbe;
+  color: white;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 2px 5px -1px rgba(0, 0, 0, 0.6);
+          box-shadow: 1px 2px 5px -1px rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px;
+  border: none;
+  font-size: 19px;
+  line-height: 32px;
+  text-align: center;
+}
+
+.timeTable > form > .resetButton:hover {
+  background-color: #4593e3;
+}
+
+.timeTable > .times > .delete {
+  -ms-flex-preferred-size: 19.5%;
+      flex-basis: 19.5%;
+  height: 8%;
+  background-color: #ececec;
+  color: black;
+  cursor: pointer;
+  line-height: 30px;
+  font-size: 18px;
+  margin: .5px;
+}
+
+.timeTable > .times > .delete:hover {
+  background-color: #c7c6c6;
+}
+
+.regist {
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #226fbe;
+  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 10px 20px rgba(0, 0, 0, 0.23);
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 10px 20px rgba(0, 0, 0, 0.23);
+}
+
+.regist > form {
+  position: absolute;
+  height: 400px;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+
+.regist > form > p {
+  font-size: 20px;
+  text-transform: uppercase;
+  left: 0;
+  margin-bottom: 30px;
+}
+
+.input > label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input > input {
+  width: 90%;
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
+  background: transparent;
+  color: gold;
+  border-width: 0 0 0.1em;
+  border-color: #fff;
+  border-style: solid;
+  font-size: 20px;
+}
+
+.regist > form > .input {
+  margin-bottom: 15px;
+}
+
+.regist > form > input {
+  width: 80px;
+  height: 20px;
+  border-style: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #fff;
+  margin-top: 10px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.regist > form > input:hover {
+  background-color: gold;
+  color: white;
+}
+
+input[name="password"], input[name="confirm_password"] {
+  -webkit-text-security: disc;
+}
+
+#app {
+  background-color: #f3f3f3;
+}
+
+#app .dataBar {
+  position: absolute;
+  height: 150px;
+  width: 400px;
+  left: 30%;
+  top: 70px;
+}
+
+#app .dataBar .image {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #ddd;
+  background-image: url("santa.png");
+  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 10px 15px rgba(0, 0, 0, 0.23);
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 10px 15px rgba(0, 0, 0, 0.23);
+}
+
+#app .dataBar .name {
+  position: absolute;
+  left: 130px;
+  top: 50px;
+}
+
+#app .dataBar .surename {
+  position: absolute;
+  left: 130px;
+  top: 75px;
+}
+
+#app .chooseBar {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  height: 55px;
+  width: 800px;
+  left: 50%;
+  top: 220px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #eee;
+  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 10px 20px rgba(0, 0, 0, 0.23);
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 10px 20px rgba(0, 0, 0, 0.23);
+}
+
+#app .chooseBar > div {
+  -ms-flex-preferred-size: 266.6px;
+      flex-basis: 266.6px;
+  height: 50px;
+  background-color: #226fbe;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+}
+
+#app .chooseBar > div:hover {
+  background-color: #4593e3;
+  cursor: pointer;
+}
+
+#app .chooseBar > .statsBarActive, #app .chooseBar > .compsBarActive, #app .chooseBar > .editBarActive {
+  height: 5px;
+  background-color: #ddd;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#app .chooseBar > .compsBarActive {
+  background-color: gold;
+}
+
+#app .dataWindow, #app .editWindow, #app .compWindow, #app .addCompWindow {
+  position: absolute;
+  height: 400px;
+  width: 800px;
+  left: 50%;
+  top: 275px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #ddd;
+  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 10px 20px rgba(0, 0, 0, 0.23);
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 10px 20px rgba(0, 0, 0, 0.23);
+  display: none;
+}
+
+@media only screen and (max-width: 1724px) {
+  #app .dataWindow, #app .editWindow, #app .compWindow, #app .addCompWindow {
+    top: 195px;
+  }
+  #app .chooseBar {
+    top: 150px;
+  }
+  #app .dataBar {
+    top: 10px;
+  }
+}
+
+#app .editWindow {
+  display: none;
+}
+
+#app .editWindow .nameInput {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+
+#app .editWindow .surenameInput {
+  position: absolute;
+  left: 50px;
+  top: 80px;
+}
+
+#app .dataWindow {
+  display: none;
+}
+
+#app .dataWindow .compName3 {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 20px;
+  color: #cccc00;
+}
+
+#app .dataWindow .resultTable3 {
+  position: absolute;
+  width: 80%;
+  height: 40%;
+  top: 80px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #ddd;
+  table-layout: fixed;
+}
+
+#app .dataWindow .resultTable3 > thead > tr > th {
+  text-align: left;
+}
+
+#app .dataWindow .resultTable3 > tbody > tr:nth-of-type(odd) {
+  background-color: #f3f3f3;
+}
+
+#app .dataWindow .resultTable3 > tbody > tr > td > input {
+  width: 100px;
+}
+
+#app .dataWindow p {
+  position: absolute;
+  top: 240px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 20px;
+  color: #cccc00;
+}
+
+#app .dataWindow .medals3 {
+  position: absolute;
+  width: 60%;
+  height: 13%;
+  top: 270px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #ddd;
+  text-align: center;
+  table-layout: fixed;
+}
+
+#app .dataWindow .medals3 > tbody > tr:nth-of-type(odd) {
+  background-color: #f3f3f3;
+}
+
+#app .dataWindow .medals3 > tbody > tr > td > input {
+  width: 100px;
+}
+
+#app .addCompWindow {
+  display: none;
+}
+
+#app .addCompWindow .addComp {
+  position: absolute;
+  width: 130px;
+  height: 30px;
+  left: 50%;
+  top: 350px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #226fbe;
+  color: white;
+  font-weight: 20;
+  font-size: 15px;
+  line-height: 30px;
+  text-align: center;
+  border: none;
+}
+
+#app .addCompWindow .addComp:hover {
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.19);
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+#app .addCompWindow .writeCompName {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 20px;
+  color: #cccc00;
+}
+
+#app .addCompWindow .compNameInput {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 200px;
+}
+
+#app .addCompWindow .resultTable2 {
+  position: absolute;
+  width: 80%;
+  height: 40%;
+  top: 80px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #ddd;
+  table-layout: fixed;
+}
+
+#app .addCompWindow .resultTable2 > thead > tr > th {
+  text-align: left;
+}
+
+#app .addCompWindow .resultTable2 > tbody > tr:nth-of-type(odd) {
+  background-color: #f3f3f3;
+}
+
+#app .addCompWindow .resultTable2 > tbody > tr > td > input {
+  width: 100px;
+}
+
+#app .addCompWindow p {
+  position: absolute;
+  top: 240px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 20px;
+  color: #cccc00;
+}
+
+#app .addCompWindow .medals2 {
+  position: absolute;
+  width: 60%;
+  height: 13%;
+  top: 270px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #ddd;
+  text-align: center;
+  table-layout: fixed;
+}
+
+#app .addCompWindow .medals2 > tbody > tr:nth-of-type(odd) {
+  background-color: #f3f3f3;
+}
+
+#app .addCompWindow .medals2 > tbody > tr > td > input {
+  width: 100px;
+}
+
+#app .compWindow {
+  display: block;
+}
+
+#app .compWindow .compChoice {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  left: 30px;
+  top: 10px;
+  border: 2px solid #226fbe;
+  color: #226fbe;
+}
+
+#app .compWindow .addCompButton {
+  position: absolute;
+  width: 130px;
+  height: 30px;
+  left: 150px;
+  top: 10px;
+  background-color: #226fbe;
+  color: white;
+  font-weight: 20;
+  font-size: 15px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#app .compWindow .addCompButton:hover {
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.19);
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+#app .compWindow .refreshButton {
+  position: absolute;
+  width: 100px;
+  height: 25px;
+  left: 30px;
+  top: 50px;
+  border: 2px solid #226fbe;
+  color: #226fbe;
+  line-height: 25px;
+  text-align: center;
+}
+
+#app .compWindow .refreshButton:hover {
+  cursor: pointer;
+}
+
+#app .compWindow .compName {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 20px;
+  color: #cccc00;
+}
+
+#app .compWindow .resultTable {
+  position: absolute;
+  width: 80%;
+  height: 40%;
+  top: 80px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #ddd;
+  table-layout: fixed;
+}
+
+#app .compWindow .resultTable > thead > tr > th {
+  text-align: left;
+}
+
+#app .compWindow .resultTable > tbody > tr:nth-of-type(odd) {
+  background-color: #f3f3f3;
+}
+
+#app .compWindow p {
+  position: absolute;
+  top: 240px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 20px;
+  color: #cccc00;
+}
+
+#app .compWindow .medals {
+  position: absolute;
+  width: 60%;
+  height: 13%;
+  top: 270px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #ddd;
+  text-align: center;
+  table-layout: fixed;
+}
+
+#app .compWindow .medals > tbody > tr:nth-of-type(odd) {
+  background-color: #f3f3f3;
+}
+/*# sourceMappingURL=style.css.map */

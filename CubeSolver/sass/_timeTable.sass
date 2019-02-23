@@ -1,0 +1,77 @@
+// section > .times
+//   position: absolute
+//   display: flex
+//   flex-wrap: wrap
+//   align-content: flex-start
+//   flex-grow: 1
+//   width: 18vw
+//   height: 400px
+//   top: 20%
+//   right: 18%
+//   background-color: $bgcColor
+//   font-size: 20px
+//   overflow-y: scroll
+  
+.timeTable
+  position: absolute
+  width: 18vw
+  height: 450px
+  top: 15%
+  right: 18%
+  >
+    .times
+      position: absolute
+      display: flex
+      flex-wrap: wrap
+      align-content: flex-start
+      flex-grow: 1
+      width: 100%
+      height: 400px
+      top: 38px
+      right: 0%
+      background-color: $bgcColor
+      font-size: 20px
+      overflow-y: scroll
+      
+      &::-webkit-scrollbar
+        width: 8px
+      &::-webkit-scrollbar-thumb
+        background-color: gold
+        border-radius: 3px
+        &:hover
+          background-color: rgb(255, 228, 77)
+
+    
+
+    form>.resetButton
+      position: absolute
+      width: 100%
+      height: 32px
+      top: 0px
+      right: 0%
+      background-color: $headerColor
+      color: $mainFontColor                         
+      cursor: pointer
+      box-shadow: 1px 2px 5px -1px rgba(0, 0, 0, .6)
+      margin-bottom: 10px
+      border: none
+      font-size: 19px
+      line-height: 32px
+      text-align: center
+
+      &:hover
+        background-color:#4593e3
+
+    .times >
+      .delete
+        flex-basis: 19.5%
+        height: 8%
+        background-color: rgb(236, 236, 236)
+        color: black
+        cursor: pointer
+        line-height: 30px
+        font-size: 18px
+        margin: .5px
+
+        &:hover
+          background-color: rgb(199, 198, 198)

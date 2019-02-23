@@ -1,0 +1,62 @@
+section > .stats
+  position: absolute
+  width: 13vw
+  height: 400px
+  top: 15%
+  right: 4.9%
+  padding: 5px
+  font-size: 20px
+  color: $textColor
+  overflow: hidden
+  // display: none;
+
+.stats >
+  .statsButton
+    position: absolute
+    width: 100%
+    height: 32px
+    top: 0%
+    padding: 5px
+    font-size: 20px
+    background-color: $headerColor
+    border: none
+    cursor: pointer
+    z-index: 1
+    overflow: hidden
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .6)
+    color: $mainFontColor
+    &::before
+      content: "stats"
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      transition: .3s
+    &:hover::before
+      top: 150%
+    &::after
+      content: ""
+      position: absolute
+      top: -100%
+      left: 50%
+      transform: translate(-50%, -50%)
+      border-top: 10px solid $mainFontColor
+      border-left: 20px solid transparent
+      border-right: 20px solid transparent
+      transition: .3s
+    &:hover
+      &::after
+        top: 50%
+      background-color: #4593e3
+  .mainStats
+    position: absolute
+    top: -80%
+    height: 60%
+    width: 100%
+    background-color: rgb(236, 236, 236)
+    transition: .5s
+  .mainStatsClick
+    top: 10%
+
+.mainStats > div > span
+  color: $headerColor

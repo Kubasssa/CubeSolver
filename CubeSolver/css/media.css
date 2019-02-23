@@ -1,0 +1,8 @@
+@media only screen and (min-width: 1224px) {
+  .dataWindow, .editWindow, .compWindow, .addCompWindow {
+    height: 300px;
+    width: 600px;
+    top: 225px;
+  }
+}
+/*# sourceMappingURL=media.css.map */

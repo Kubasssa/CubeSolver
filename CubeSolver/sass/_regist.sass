@@ -1,0 +1,58 @@
+.regist
+      position: absolute
+      width: 400px
+      height: 500px
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      background-color: $headerColor
+      box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0px 10px 20px rgba(0,0,0,0.23)
+
+.regist > form
+  position: absolute
+  height: 400px
+  width: 300px
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  color: white
+  > p
+    font-size: 20px
+    text-transform: uppercase
+    left: 0
+    margin-bottom: 30px
+
+.input >
+  label
+    display: block
+    margin-bottom: 10px
+  input
+    width: 90%
+    box-shadow: 0
+    background: transparent
+    color: gold
+    border-width: 0 0 0.1em
+    border-color: #fff
+    border-style: solid
+    font-size: 20px
+
+.regist > form >
+  .input
+    margin-bottom: 15px
+  input
+    width: 80px
+    height: 20px
+    border-style: none
+    border-radius: 10px
+    font-size: 15px
+    cursor: pointer
+    background-color: #fff
+    margin-top: 10px
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    transition: 0.2s
+    &:hover
+      background-color: gold
+      color: rgb(255,255,255)
+
+input[name="password"], input[name="confirm_password"]
+  -webkit-text-security: disc

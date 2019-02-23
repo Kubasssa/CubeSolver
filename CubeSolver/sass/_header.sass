@@ -1,0 +1,58 @@
+header
+  position: relative
+  height: 60px
+  width: 100%
+  background-color: $headerColor
+  >
+    .mainLink
+      margin-left: 50px
+      line-height: 60px
+      text-decoration: none
+      text-decoration-color: black
+      font-size: 30px
+      color: #000
+    .logout
+      position: absolute
+      right: 110px
+      line-height: 60px
+      color: $mainFontColor
+    .loginImage
+      position: absolute
+      height: 45px
+      width: 45px
+      right: 50px
+      top: 7.5px
+      background-image: url("profile.png")
+      background-position: center
+      border-radius: 50%
+      cursor: pointer 
+    form
+      position: absolute
+      right: 10px
+      top: 15px
+      min-width: 300px
+      >
+        \:nth-child(1)
+          width: 100px
+          height: 18px
+        \:nth-child(2)
+          width: 120px
+          height: 18px
+        \:nth-child(1)::placeholder, :nth-child(2)::placeholder
+          color: rgb(68, 68, 68)
+        \:nth-child(3)
+          width: 40px
+          border: none
+          border-radius: 2px
+          background-color: gold
+          cursor: pointer
+          margin-left: 10px
+    .regLink
+      position: absolute
+      right: 85px
+      top: 39px
+      text-decoration: none
+      color: black
+      font-size: 13px
+      &:hover
+        color: gold

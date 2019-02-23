@@ -1,0 +1,291 @@
+#app
+    background-color: $bgcColor
+    .dataBar
+        position: absolute
+        height: 150px
+        width: 400px
+        left: 30%
+        top: 70px
+        .image
+            position: absolute
+            height: 80px
+            width: 80px
+            left: 10px
+            top: 50%
+            transform: translateY(-50%)
+            border-radius: 50%
+            background-color: #ddd
+            background-image: url("santa.png")
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0px 10px 15px rgba(0,0,0,0.23)
+        .name
+            position: absolute
+            left: 130px
+            top: 50px
+        .surename
+            position: absolute
+            left: 130px
+            top: 75px
+    .chooseBar
+        position: absolute
+        display: flex
+        justify-content: center
+        flex-direction: row
+        flex-wrap: wrap
+        flex-flow: row wrap
+        align-content: flex-end
+        height: 55px
+        width: 800px
+        left: 50%
+        top: 220px
+        transform: translateX(-50%)
+        background-color: #eee
+        box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0px 10px 20px rgba(0,0,0,0.23)
+        >
+            div
+                flex-basis: 266.6px
+                height:  50px
+                background-color: $headerColor
+                text-align: center
+                line-height: 50px
+                color: $mainFontColor
+                &:hover
+                    background-color:#4593e3
+                    cursor: pointer
+            .statsBarActive, .compsBarActive, .editBarActive
+                height:  5px
+                background-color: #ddd
+                transition: 0.3s
+            .compsBarActive
+                background-color: gold               
+    .dataWindow,.editWindow,.compWindow,.addCompWindow
+        position: absolute
+        height: 400px
+        width: 800px
+        left: 50%
+        top: 275px
+        transform: translateX(-50%)
+        background-color: #ddd
+        box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0px 10px 20px rgba(0,0,0,0.23)
+        display: none
+    @media only screen and (max-width: 1724px)
+        .dataWindow,.editWindow,.compWindow,.addCompWindow
+            top: 195px
+        .chooseBar
+            top: 150px
+        .dataBar
+            top: 10px
+    .editWindow
+        display: none
+        .nameInput
+            position: absolute
+            left: 50px
+            top: 50px
+        .surenameInput
+            position: absolute
+            left: 50px
+            top: 80px
+    .dataWindow
+        display: none
+        .compName3
+            position: absolute
+            top: 55px
+            left: 50%
+            transform: translateX(-50%)
+            font-size: 20px
+            color: #cccc00
+        .resultTable3
+            position: absolute
+            width: 80%
+            height: 40%
+            top: 80px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: #ddd
+            table-layout: fixed 
+            >thead>tr>th
+                text-align: left
+
+        .resultTable3>tbody>tr:nth-of-type(odd)
+            background-color: $bgcColor
+        .resultTable3>tbody>tr>td>input
+            width: 100px
+
+        p
+            position: absolute
+            top: 240px
+            left: 50%
+            transform: translateX(-50%)
+            font-size: 20px
+            color: #cccc00
+        .medals3
+            position: absolute
+            width: 60%
+            height: 13%
+            top: 270px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: #ddd
+            text-align: center
+            table-layout: fixed 
+
+
+        .medals3>tbody>tr:nth-of-type(odd)
+            background-color: $bgcColor
+
+        .medals3>tbody>tr>td>input
+            width: 100px
+    .addCompWindow
+        display: none
+        .addComp
+            position: absolute
+            width: 130px
+            height: 30px
+            left: 50%
+            top: 350px
+            transform: translateX(-50%)
+            background-color: $headerColor
+            color: white
+            font-weight: 20
+            font-size: 15px
+            line-height: 30px
+            text-align: center
+            border: none
+            &:hover
+                box-shadow: 0px 5px 10px rgba(0,0,0,0.19)                
+                cursor: pointer
+        .writeCompName
+            position: absolute
+            top: 25px
+            left: 50%
+            transform: translateX(-50%)
+            font-size: 20px
+            color: #cccc00
+        .compNameInput
+            position: absolute
+            top: 55px
+            left: 50%
+            transform: translateX(-50%)
+            width: 200px
+        .resultTable2
+            position: absolute
+            width: 80%
+            height: 40%
+            top: 80px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: #ddd
+            table-layout: fixed 
+            >thead>tr>th
+                text-align: left
+
+        .resultTable2>tbody>tr:nth-of-type(odd)
+            background-color: $bgcColor
+        .resultTable2>tbody>tr>td>input
+            width: 100px
+
+        p
+            position: absolute
+            top: 240px
+            left: 50%
+            transform: translateX(-50%)
+            font-size: 20px
+            color: #cccc00
+        .medals2
+            position: absolute
+            width: 60%
+            height: 13%
+            top: 270px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: #ddd
+            text-align: center
+            table-layout: fixed 
+
+
+        .medals2>tbody>tr:nth-of-type(odd)
+            background-color: $bgcColor
+
+        .medals2>tbody>tr>td>input
+            width: 100px
+
+    .compWindow
+        display: block
+        .compChoice
+            position: absolute
+            width: 100px
+            height: 30px
+            left: 30px
+            top: 10px
+            border: 2px solid $headerColor
+            color: $headerColor
+        .addCompButton
+            position: absolute
+            width: 130px
+            height: 30px
+            left: 150px
+            top: 10px
+            background-color: $headerColor
+            color: white
+            font-weight: 20
+            font-size: 15px
+            line-height: 30px
+            text-align: center
+            &:hover
+                box-shadow: 0px 5px 10px rgba(0,0,0,0.19)                
+                cursor: pointer
+        .refreshButton
+            position: absolute
+            width: 100px
+            height: 25px
+            left: 30px
+            top: 50px
+            border: 2px solid $headerColor
+            color: $headerColor
+            line-height: 25px
+            text-align: center
+            &:hover
+                cursor: pointer
+        .compName
+            position: absolute
+            top: 55px
+            left: 50%
+            transform: translateX(-50%)
+            font-size: 20px
+            color: #cccc00
+        .resultTable
+            position: absolute
+            width: 80%
+            height: 40%
+            top: 80px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: #ddd
+            table-layout: fixed 
+            >thead>tr>th
+                text-align: left
+
+        .resultTable>tbody>tr:nth-of-type(odd)
+            background-color: $bgcColor
+
+        p
+            position: absolute
+            top: 240px
+            left: 50%
+            transform: translateX(-50%)
+            font-size: 20px
+            color: #cccc00
+        .medals
+            position: absolute
+            width: 60%
+            height: 13%
+            top: 270px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: #ddd
+            text-align: center
+            table-layout: fixed 
+
+
+        .medals>tbody>tr:nth-of-type(odd)
+            background-color: $bgcColor
+
